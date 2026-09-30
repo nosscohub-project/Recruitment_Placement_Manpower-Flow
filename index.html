@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruitment & Placement Manpower Solution — Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e1e4ed;
+    --muted: #8b8fa3;
+    --accent: #6c8cff;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --purple: #a78bfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.1rem; color: var(--accent); margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+
+  /* Flow diagram */
+  .flow { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .flow-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    flex: 1 1 140px;
+    min-width: 140px;
+    text-align: center;
+    font-size: 0.82rem;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .flow-step:hover { border-color: var(--accent); }
+  .flow-step .num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    width: 22px; height: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .flow-step.client { border-left: 3px solid var(--accent); }
+  .flow-step.recruit { border-left: 3px solid var(--purple); }
+  .flow-arrow {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; color: var(--muted); flex: 0 0 20px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0 1.5rem;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  th { background: var(--surface); color: var(--accent); font-weight: 600; }
+  tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+
+  /* Commercial logic */
+  .commercial { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .card h3 { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .card p { font-size: 0.9rem; }
+  .trigger { border-left: 3px solid var(--green); }
+  .no-fee { border-left: 3px solid var(--amber); }
+
+  /* Badge */
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+  .badge-green { background: rgba(52,211,153,0.15); color: var(--green); }
+  .badge-amber { background: rgba(251,191,36,0.15); color: var(--amber); }
+
+  /* Footer */
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .footer strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<h1>Recruitment & Placement Manpower Solution</h1>
+<p class="subtitle">End-to-End Flow — Client ↔ Recruitment Agency ↔ Candidate &nbsp;|&nbsp; Updated: 2026-09-30</p>
+
+<!-- 1. Core Business Flow -->
+<h2>1. Core Business Flow</h2>
+<div class="flow">
+  <div class="flow-step client"><span class="num">1</span>Client Need<br><small>Manpower requirement identified</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">2</span>Service Agreement<br><small>Sign Recruitment & Placement Agreement</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">3</span>Job Order<br><small>Position, qty, salary, location, start date</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">4</span>Source Candidates<br><small>Recruitment channels</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">5</span>Screen & Pre-Interview<br><small>CV check, qualifications, initial screen</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">6</span>Shortlist<br><small>Qualified candidates for client review</small></div>
+</div>
+<div class="flow">
+  <div class="flow-step client"><span class="num">7</span>Client Final Interview<br><small>Client conducts interview & decides</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">8</span>Selection Confirmation<br><small>Client confirms to recruitment company</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">9</span>Placement Confirmation<br><small>Record placement under agreed terms</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">10</span>Invoice<br><small>Placement fee invoice issued</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">11</span>Employment Process<br><small>Onboarding & work-authorisation</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">12</span>Guarantee / Replacement<br><small>Early departure → replacement process</small></div>
+</div>
+
+<!-- 2. Contract & Responsibility Flow -->
+<h2>2. Contract & Responsibility Flow</h2>
+<table>
+  <thead>
+    <tr><th>Stage</th><th>Primary Party</th><th>Key Document</th><th>Commercial Purpose</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Client onboarding</td><td>Client ↔ Recruitment Co.</td><td>Recruitment & Placement Service Agreement</td><td>Defines scope, fees, payment, replacement, candidate ownership</td></tr>
+    <tr><td>Vacancy request</td><td>Client ↔ Recruitment Co.</td><td>Manpower Request / Job Order</td><td>Defines exact position & hiring requirement</td></tr>
+    <tr><td>Candidate registration</td><td>Candidate ↔ Recruitment Co.</td><td>Candidate Registration & Consent</td><td>Confirms info & permission to process/share</td></tr>
+    <tr><td>Candidate submission</td><td>Recruitment Co. → Client</td><td>Candidate Submission Form / CV</td><td>Traceable record of candidate introduction</td></tr>
+    <tr><td>Hiring decision</td><td>Client</td><td>Interview / Selection Confirmation</td><td>Client makes final hiring decision</td></tr>
+    <tr><td>Successful placement</td><td>Client ↔ Recruitment Co.</td><td>Placement Confirmation</td><td>Triggers agreed placement fee</td></tr>
+    <tr><td>Payment</td><td>Client ↔ Recruitment Co.</td><td>Invoice / Receipt</td><td>Client pays per agreed payment terms</td></tr>
+    <tr><td>Employment</td><td>Client ↔ Candidate</td><td>Employment Contract / onboarding docs</td><td>Client completes employment process</td></tr>
+    <tr><td>Replacement</td><td>Recruitment Co. ↔ Client</td><td>Replacement Request</td><td>Only when contractual guarantee conditions met</td></tr>
+  </tbody>
+</table>
+
+<!-- 3. Commercial Logic -->
+<h2>3. Commercial Logic</h2>
+<div class="commercial">
+  <div class="card no-fee"><h3>Client Action</h3><p>Requests manpower → Reviews candidates → Conducts final interview → Selects candidate → Completes employment</p></div>
+  <div class="card no-fee"><h3>Recruitment Co. Action</h3><p>Accepts requirement → Sources, screens, shortlists → Coordinates submission → Confirms placement → Maintains record / guarantee</p></div>
+  <div class="card trigger"><h3>Payment Trigger</h3><p><span class="badge badge-amber">No fee yet</span> until selection → <span class="badge badge-green">Fee payable</span> on confirmation → <span class="badge badge-green">Invoice paid</span> per terms</p></div>
+</div>
+
+<!-- 4. Visual Relationship -->
+<h2>4. Simple Visual Relationship</h2>
+<div class="flow">
+  <div class="flow-step client"><strong>CLIENT</strong><br><small>Needs manpower<br>Signs agreement<br>Submits job order<br>Final interview<br>Completes employment</small></div>
+  <div class="flow-arrow">↔</div>
+  <div class="flow-step recruit"><strong>RECRUITMENT CO.</strong><br><small>Sources → Screens → Shortlists<br>Submits qualified candidates<br>Confirms placement & invoices<br>Replacement support</small></div>
+  <div class="flow-arrow">↔</div>
+  <div class="flow-step client" style="border-left-color: var(--green);"><strong>CANDIDATE</strong><br><small>Registers & consents<br>Screening & interview<br>Selected / Not selected<br>Employment if hired</small></div>
+</div>
+
+<div class="footer">
+  <strong> positioning:</strong> "You Hire. We Find." — Success-based recruitment & placement service.<br>
+  <strong>⚠ Note:</strong> This flow describes recruitment/placement (client hires directly). Not manpower outsourcing/staffing. For Saudi Arabia operations, confirm licensed activity & contract structure with the appropriate authority before launch.
+</div>
+
+</body>
+</html>
