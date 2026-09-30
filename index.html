@@ -2,270 +2,191 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Recruitment &amp; Placement Service Agreement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruitment & Placement Manpower Solution — Dashboard</title>
 <style>
-  @page { margin: 1.6cm; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11px; color: #1a1a1a; line-height: 1.55; padding: 18px 22px; max-width: 210mm; margin: 0 auto; }
-  h1 { font-size: 17px; text-align: center; margin-bottom: 2px; }
-  h2 { font-size: 12.5px; border-bottom: 2px solid #2c5f8a; padding-bottom: 3px; margin: 16px 0 8px; color: #2c5f8a; }
-  h3 { font-size: 11.5px; margin: 10px 0 5px; }
-  .subtitle { text-align: center; font-size: 10px; color: #555; margin-bottom: 14px; }
-  .grid { display: flex; flex-wrap: wrap; gap: 4px 0; }
-  .col { flex: 1 1 46%; min-width: 180px; padding: 2px 6px; }
-  .col.full { flex: 1 1 100%; }
-  label { display: block; font-size: 9px; font-weight: 600; color: #555; margin-bottom: 1px; text-transform: uppercase; letter-spacing: 0.4px; }
-  input, select, textarea { width: 100%; padding: 5px 7px; border: 1px solid #bbb; border-radius: 2px; font-size: 10.5px; font-family: inherit; background: #fff; }
-  input:focus, select:focus, textarea:focus { outline: 2px solid #2c5f8a; border-color: #2c5f8a; }
-  textarea { resize: vertical; min-height: 36px; }
-  table { width: 100%; border-collapse: collapse; margin: 6px 0; }
-  th, td { border: 1px solid #bbb; padding: 5px 7px; text-align: left; font-size: 10px; vertical-align: top; }
-  th { background: #e8eff5; font-weight: 600; }
-  ul, ol { padding-left: 22px; margin: 4px 0; }
-  li { padding: 1px 0; font-size: 10.5px; }
-  .sig-block { display: flex; gap: 30px; margin-top: 12px; flex-wrap: wrap; }
-  .sig-block > div { flex: 1 1 200px; }
-  .sig-line { border-bottom: 1.5px solid #333; display: inline-block; min-width: 180px; margin-top: 22px; }
-  .checklist { list-style: none; padding-left: 0; }
-  .checklist li { padding: 2px 0; }
-  .checklist input[type="checkbox"] { width: auto; margin-right: 5px; }
-  .footer { text-align: center; font-size: 9px; color: #888; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 6px; }
-  .page-break { page-break-before: always; }
-  strong { font-weight: 600; }
-  em { font-style: italic; }
-  @media print {
-    body { padding: 0; font-size: 10.5px; }
-    input, select, textarea { border: 1px solid #999; background: #fafafa; }
-    h2 { color: #000; border-bottom-color: #000; }
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e1e4ed;
+    --muted: #8b8fa3;
+    --accent: #6c8cff;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --purple: #a78bfa;
   }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.1rem; color: var(--accent); margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+
+  /* Flow diagram */
+  .flow { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .flow-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    flex: 1 1 140px;
+    min-width: 140px;
+    text-align: center;
+    font-size: 0.82rem;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .flow-step:hover { border-color: var(--accent); }
+  .flow-step .num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    width: 22px; height: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .flow-step.client { border-left: 3px solid var(--accent); }
+  .flow-step.recruit { border-left: 3px solid var(--purple); }
+  .flow-arrow {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; color: var(--muted); flex: 0 0 20px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0 1.5rem;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  th { background: var(--surface); color: var(--accent); font-weight: 600; }
+  tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+
+  /* Commercial logic */
+  .commercial { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .card h3 { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .card p { font-size: 0.9rem; }
+  .trigger { border-left: 3px solid var(--green); }
+  .no-fee { border-left: 3px solid var(--amber); }
+
+  /* Badge */
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+  .badge-green { background: rgba(52,211,153,0.15); color: var(--green); }
+  .badge-amber { background: rgba(251,191,36,0.15); color: var(--amber); }
+
+  /* Footer */
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .footer strong { color: var(--text); }
 </style>
 </head>
 <body>
 
-<h1>RECRUITMENT &amp; PLACEMENT SERVICE AGREEMENT</h1>
-<div class="subtitle">Agreement No.: <input type="text" style="width:130px;"> &nbsp;&nbsp; Date: <input type="text" style="width:110px;" placeholder="DD/MM/YYYY"></div>
+<h1>Recruitment & Placement Manpower Solution</h1>
+<p class="subtitle">End-to-End Flow — Client ↔ Recruitment Agency ↔ Candidate &nbsp;|&nbsp; Updated: 2026-09-30</p>
 
-<p>This Recruitment &amp; Placement Service Agreement ("Agreement") is entered into between:</p>
-
-<h2>PARTY A — CLIENT</h2>
-<div class="grid">
-  <div class="col"><label>Company Name</label><input type="text"></div>
-  <div class="col"><label>Commercial Registration No.</label><input type="text"></div>
-  <div class="col"><label>Address</label><input type="text"></div>
-  <div class="col"><label>Represented By</label><input type="text"></div>
-  <div class="col"><label>Position</label><input type="text"></div>
-  <div class="col"><label>Email</label><input type="text"></div>
-  <div class="col"><label>Phone</label><input type="text"></div>
+<!-- 1. Core Business Flow -->
+<h2>1. Core Business Flow</h2>
+<div class="flow">
+  <div class="flow-step client"><span class="num">1</span>Client Need<br><small>Manpower requirement identified</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">2</span>Service Agreement<br><small>Sign Recruitment & Placement Agreement</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">3</span>Job Order<br><small>Position, qty, salary, location, start date</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">4</span>Source Candidates<br><small>Recruitment channels</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">5</span>Screen & Pre-Interview<br><small>CV check, qualifications, initial screen</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">6</span>Shortlist<br><small>Qualified candidates for client review</small></div>
 </div>
-<p>Hereinafter referred to as the <strong>"Client."</strong></p>
-
-<h2>PARTY B — RECRUITMENT COMPANY</h2>
-<div class="grid">
-  <div class="col"><label>Company Name</label><input type="text"></div>
-  <div class="col"><label>Commercial Registration No.</label><input type="text"></div>
-  <div class="col"><label>Address</label><input type="text"></div>
-  <div class="col"><label>Represented By</label><input type="text"></div>
-  <div class="col"><label>Position</label><input type="text"></div>
-  <div class="col"><label>Email</label><input type="text"></div>
-  <div class="col"><label>Phone</label><input type="text"></div>
-</div>
-<p>Hereinafter referred to as the <strong>"Recruitment Company."</strong></p>
-
-<p>The Client and Recruitment Company are collectively referred to as the <strong>"Parties."</strong></p>
-
-<h2>1. PURPOSE OF THE AGREEMENT</h2>
-<p>The purpose of this Agreement is to establish the terms under which the Recruitment Company will provide recruitment and candidate-placement services to the Client.</p>
-<p>The Recruitment Company will identify, source, screen, assess and introduce suitable candidates based on vacancies and requirements provided by the Client.</p>
-<p>The Client will retain responsibility for the final interview and hiring decision.</p>
-
-<h2>2. SERVICES PROVIDED BY THE RECRUITMENT COMPANY</h2>
-<p>The Recruitment Company may provide the following services:</p>
-<ol>
-  <li>Receive manpower requirements from the Client.</li>
-  <li>Prepare and publish recruitment requirements through appropriate channels.</li>
-  <li>Source potential candidates.</li>
-  <li>Review candidate CVs and qualifications.</li>
-  <li>Conduct preliminary screening.</li>
-  <li>Conduct initial interviews where applicable.</li>
-  <li>Verify information provided by candidates to the extent agreed.</li>
-  <li>Shortlist suitable candidates.</li>
-  <li>Submit candidate profiles to the Client.</li>
-  <li>Coordinate interviews between the Client and candidates.</li>
-  <li>Communicate the Client's hiring decision to candidates.</li>
-  <li>Coordinate the placement process.</li>
-  <li>Provide replacement services where specifically covered by this Agreement.</li>
-</ol>
-<p>The exact services for each vacancy may be specified in a separate <em>Job Order / Manpower Request Form</em>.</p>
-
-<h2>3. CLIENT RESPONSIBILITIES</h2>
-<ol>
-  <li>Provide accurate job descriptions and manpower requirements.</li>
-  <li>Provide the required qualifications and experience.</li>
-  <li>Clearly communicate salary, benefits, working location, working hours and other material employment conditions.</li>
-  <li>Review submitted candidates within a reasonable period.</li>
-  <li>Conduct the final interview and make the hiring decision.</li>
-  <li>Notify the Recruitment Company of selected and rejected candidates.</li>
-  <li>Provide accurate information concerning the position offered to a candidate.</li>
-  <li>Complete the applicable employment and onboarding procedures for a successful candidate.</li>
-  <li>Pay the agreed recruitment/placement fee according to this Agreement.</li>
-  <li>Comply with all applicable Saudi employment and immigration requirements.</li>
-</ol>
-
-<h2>4. FINAL HIRING DECISION</h2>
-<p>The Client retains sole responsibility for deciding whether to employ a candidate.</p>
-<p>Submission of a candidate by the Recruitment Company does not guarantee employment.</p>
-<p>The Recruitment Company does not guarantee that every submitted candidate will be accepted by the Client.</p>
-
-<h2>5. CANDIDATE INTRODUCTION</h2>
-<p>A candidate will be considered "introduced" when the Recruitment Company provides the Client with the candidate's CV, profile, contact information, interview details or other identifying recruitment information.</p>
-<p>If the Client already has an active recruitment record for the same candidate, the Client should notify the Recruitment Company promptly and provide reasonable evidence of the prior relationship.</p>
-
-<h2>6. PLACEMENT FEE</h2>
-<p>For every candidate successfully hired by the Client following an introduction by the Recruitment Company, the Client shall pay the Recruitment Company the agreed placement fee.</p>
-
-<h3>Fee Structure</h3>
-<div class="grid">
-  <div class="col"><label>Position</label><input type="text"></div>
-  <div class="col"><label>Placement Fee (SAR)</label><input type="text"></div>
-  <div class="col"><label>VAT, if applicable (SAR)</label><input type="text"></div>
-  <div class="col"><label>Total (SAR)</label><input type="text"></div>
-</div>
-<p>Alternative fee structure, if applicable:</p>
-<div class="grid">
-  <div class="col"><label>Placement Fee</label><input type="text" placeholder="[%]"></div>
-  <div class="col"><label>Of</label><input type="text" placeholder="annual / monthly salary"></div>
-</div>
-<p>The applicable fee shall be confirmed in the relevant Job Order or Placement Confirmation.</p>
-
-<h2>7. PAYMENT TERMS</h2>
-<p>The Recruitment Company shall issue an invoice after the agreed placement-fee trigger occurs.</p>
-<p>Payment shall be made within <input type="text" style="width:60px;"> <label style="display:inline;">calendar days</label> from the invoice date unless otherwise agreed in writing.</p>
-<p>Payment shall be made to:</p>
-<div class="grid">
-  <div class="col"><label>Bank</label><input type="text"></div>
-  <div class="col"><label>Account Name</label><input type="text"></div>
-  <div class="col"><label>IBAN</label><input type="text"></div>
-</div>
-<p>Any applicable VAT or other legally required charges shall be handled in accordance with applicable law.</p>
-
-<h2>8. CANDIDATE OWNERSHIP / PROTECTION PERIOD</h2>
-<p>If the Client hires, contracts with or otherwise engages a candidate introduced by the Recruitment Company within <input type="text" style="width:50px;"> <label style="display:inline;">months</label> from the date of introduction, the agreed placement fee shall become payable, subject to the terms of this Agreement.</p>
-<p>This provision applies whether the candidate is hired for the originally submitted position or another position, where permitted by applicable law.</p>
-
-<h2>9. REPLACEMENT GUARANTEE</h2>
-<p>Where a replacement guarantee is included in the applicable Job Order, the Recruitment Company may provide a replacement candidate if the placed candidate leaves employment or the employment relationship ends during the agreed guarantee period and the applicable conditions are satisfied.</p>
-<p><strong>Guarantee Period:</strong> <input type="text" style="width:70px;" placeholder="30 / 60 / 90"> <label style="display:inline;">days</label></p>
-<p>The replacement guarantee shall not apply where the departure results from circumstances excluded in the applicable Job Order, including, where appropriate:</p>
-<ul>
-  <li>Material change to the agreed employment terms;</li>
-  <li>Reduction or non-payment of agreed compensation;</li>
-  <li>Relocation of the employee without prior agreement;</li>
-  <li>Workplace conditions materially different from those presented to the candidate;</li>
-  <li>Termination caused by the Client's business decision unrelated to candidate suitability;</li>
-  <li>Redundancy or business closure;</li>
-  <li>Events outside the reasonable control of the Parties.</li>
-</ul>
-<p>The specific exclusions should be reviewed and customized before use.</p>
-
-<h2>10. NO GUARANTEE OF EMPLOYMENT PERFORMANCE</h2>
-<p>The Recruitment Company provides recruitment and placement services and does not guarantee the future performance, attendance, conduct, productivity or long-term retention of a candidate.</p>
-<p>The Client is responsible for evaluating the candidate before employment and supervising the candidate after employment.</p>
-
-<h2>11. EMPLOYMENT RELATIONSHIP</h2>
-<p>Unless a separate legally authorized manpower outsourcing arrangement applies, the employment relationship following successful recruitment shall be between the <strong>Client and the Candidate</strong>.</p>
-<p>The Client shall be responsible for completing the applicable employment documentation and statutory requirements.</p>
-<p>Nothing in this Agreement shall be interpreted as creating an employment relationship between the Recruitment Company and the candidate solely because the Recruitment Company provides recruitment and placement services.</p>
-
-<h2>12. CANDIDATE INFORMATION AND DATA</h2>
-<p>The Parties shall handle candidate personal information only for legitimate recruitment and employment-related purposes and in accordance with applicable privacy and data-protection requirements.</p>
-<p>The Recruitment Company shall obtain appropriate candidate consent where required before sharing candidate information with the Client.</p>
-<p>The Client shall use candidate information only for legitimate recruitment and employment purposes.</p>
-
-<h2>13. CONFIDENTIALITY</h2>
-<p>Each Party shall keep confidential information received from the other Party confidential and shall not disclose such information to unauthorized third parties except where disclosure is required by law or necessary to perform this Agreement.</p>
-<p>Confidential information may include:</p>
-<ul>
-  <li>Candidate information;</li>
-  <li>Salary information;</li>
-  <li>Business information;</li>
-  <li>Recruitment requirements;</li>
-  <li>Commercial terms;</li>
-  <li>Internal procedures;</li>
-  <li>Customer information.</li>
-</ul>
-
-<h2>14. NON-CIRCUMVENTION</h2>
-<p>The Client agrees not to intentionally bypass the Recruitment Company in order to avoid an agreed placement fee for a candidate introduced by the Recruitment Company.</p>
-<p>If the Client directly hires or engages an introduced candidate during the protection period described in this Agreement, the applicable placement fee shall remain payable.</p>
-<p>This clause shall be interpreted subject to applicable law.</p>
-
-<h2>15. CANDIDATE REJECTION</h2>
-<p>The Client may reject any candidate at its discretion.</p>
-<p>The Recruitment Company shall continue sourcing candidates where the Client requests additional candidates, subject to the agreed recruitment scope.</p>
-
-<h2>16. JOB ORDER</h2>
-<p>Each recruitment assignment should preferably be documented through a Job Order containing:</p>
-<ul>
-  <li>Position;</li>
-  <li>Number of vacancies;</li>
-  <li>Location;</li>
-  <li>Salary;</li>
-  <li>Benefits;</li>
-  <li>Working hours;</li>
-  <li>Days off;</li>
-  <li>Required qualifications;</li>
-  <li>Experience;</li>
-  <li>Start date;</li>
-  <li>Placement fee;</li>
-  <li>Guarantee period;</li>
-  <li>Special requirements.</li>
-</ul>
-<p>The signed Job Order shall form part of this Agreement.</p>
-
-<h2>17. TERMINATION</h2>
-<p>Either Party may terminate this Agreement by providing <input type="text" style="width:50px;" value="30"> <label style="display:inline;">days' written notice</label>, unless otherwise agreed.</p>
-<p>Termination shall not affect payment obligations relating to candidates introduced before termination.</p>
-<p>Candidates introduced before termination shall remain subject to the agreed protection period.</p>
-
-<h2>18. COMPLIANCE WITH APPLICABLE LAW</h2>
-<p>The Parties shall comply with all applicable laws, regulations, licensing requirements and government requirements applicable to their respective activities.</p>
-<p>Where a particular recruitment activity requires a license, authorization or approval, the relevant Party shall be responsible for maintaining the required authorization.</p>
-
-<h2>19. LIMITATION OF AUTHORITY</h2>
-<p>Neither Party may represent that it has authority to legally bind the other Party unless such authority has been expressly granted in writing.</p>
-
-<h2>20. DISPUTE RESOLUTION</h2>
-<p>The Parties shall first attempt to resolve any dispute through good-faith negotiation.</p>
-<p>If the dispute cannot be resolved amicably, the Parties may refer the matter to the competent authority or court in the Kingdom of Saudi Arabia, subject to applicable law and jurisdiction.</p>
-
-<h2>21. ENTIRE AGREEMENT</h2>
-<p>This Agreement, together with its Job Orders, Placement Confirmations and applicable attachments, constitutes the agreement between the Parties regarding the recruitment services covered by this Agreement.</p>
-<p>Any amendment should be made in writing and accepted by authorized representatives of both Parties.</p>
-
-<h2>SIGNATURES</h2>
-
-<div class="sig-block">
-  <div>
-    <p><strong>CLIENT</strong></p>
-    <label>Company Name</label><input type="text"><br>
-    <label>Authorized Representative</label><input type="text"><br>
-    <label>Position</label><input type="text"><br>
-    <div class="sig-line"></div> Signature<br>
-    <label>Date</label><input type="text" placeholder="DD/MM/YYYY"><br>
-    <label>Company Stamp</label><input type="text">
-  </div>
-  <div>
-    <p><strong>RECRUITMENT COMPANY</strong></p>
-    <label>Company Name</label><input type="text"><br>
-    <label>Authorized Representative</label><input type="text"><br>
-    <label>Position</label><input type="text"><br>
-    <div class="sig-line"></div> Signature<br>
-    <label>Date</label><input type="text" placeholder="DD/MM/YYYY"><br>
-    <label>Company Stamp</label><input type="text">
-  </div>
+<div class="flow">
+  <div class="flow-step client"><span class="num">7</span>Client Final Interview<br><small>Client conducts interview & decides</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">8</span>Selection Confirmation<br><small>Client confirms to recruitment company</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">9</span>Placement Confirmation<br><small>Record placement under agreed terms</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step recruit"><span class="num">10</span>Invoice<br><small>Placement fee invoice issued</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">11</span>Employment Process<br><small>Onboarding & work-authorisation</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step client"><span class="num">12</span>Guarantee / Replacement<br><small>Early departure → replacement process</small></div>
 </div>
 
-<div class="footer">Recruitment &amp; Placement Service Agreement — Fill, save, print &amp; share</div>
+<!-- 2. Contract & Responsibility Flow -->
+<h2>2. Contract & Responsibility Flow</h2>
+<table>
+  <thead>
+    <tr><th>Stage</th><th>Primary Party</th><th>Key Document</th><th>Commercial Purpose</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Client onboarding</td><td>Client ↔ Recruitment Co.</td><td>Recruitment & Placement Service Agreement</td><td>Defines scope, fees, payment, replacement, candidate ownership</td></tr>
+    <tr><td>Vacancy request</td><td>Client ↔ Recruitment Co.</td><td>Manpower Request / Job Order</td><td>Defines exact position & hiring requirement</td></tr>
+    <tr><td>Candidate registration</td><td>Candidate ↔ Recruitment Co.</td><td>Candidate Registration & Consent</td><td>Confirms info & permission to process/share</td></tr>
+    <tr><td>Candidate submission</td><td>Recruitment Co. → Client</td><td>Candidate Submission Form / CV</td><td>Traceable record of candidate introduction</td></tr>
+    <tr><td>Hiring decision</td><td>Client</td><td>Interview / Selection Confirmation</td><td>Client makes final hiring decision</td></tr>
+    <tr><td>Successful placement</td><td>Client ↔ Recruitment Co.</td><td>Placement Confirmation</td><td>Triggers agreed placement fee</td></tr>
+    <tr><td>Payment</td><td>Client ↔ Recruitment Co.</td><td>Invoice / Receipt</td><td>Client pays per agreed payment terms</td></tr>
+    <tr><td>Employment</td><td>Client ↔ Candidate</td><td>Employment Contract / onboarding docs</td><td>Client completes employment process</td></tr>
+    <tr><td>Replacement</td><td>Recruitment Co. ↔ Client</td><td>Replacement Request</td><td>Only when contractual guarantee conditions met</td></tr>
+  </tbody>
+</table>
+
+<!-- 3. Commercial Logic -->
+<h2>3. Commercial Logic</h2>
+<div class="commercial">
+  <div class="card no-fee"><h3>Client Action</h3><p>Requests manpower → Reviews candidates → Conducts final interview → Selects candidate → Completes employment</p></div>
+  <div class="card no-fee"><h3>Recruitment Co. Action</h3><p>Accepts requirement → Sources, screens, shortlists → Coordinates submission → Confirms placement → Maintains record / guarantee</p></div>
+  <div class="card trigger"><h3>Payment Trigger</h3><p><span class="badge badge-amber">No fee yet</span> until selection → <span class="badge badge-green">Fee payable</span> on confirmation → <span class="badge badge-green">Invoice paid</span> per terms</p></div>
+</div>
+
+<!-- 4. Visual Relationship -->
+<h2>4. Simple Visual Relationship</h2>
+<div class="flow">
+  <div class="flow-step client"><strong>CLIENT</strong><br><small>Needs manpower<br>Signs agreement<br>Submits job order<br>Final interview<br>Completes employment</small></div>
+  <div class="flow-arrow">↔</div>
+  <div class="flow-step recruit"><strong>RECRUITMENT CO.</strong><br><small>Sources → Screens → Shortlists<br>Submits qualified candidates<br>Confirms placement & invoices<br>Replacement support</small></div>
+  <div class="flow-arrow">↔</div>
+  <div class="flow-step client" style="border-left-color: var(--green);"><strong>CANDIDATE</strong><br><small>Registers & consents<br>Screening & interview<br>Selected / Not selected<br>Employment if hired</small></div>
+</div>
+
+<div class="footer">
+  <strong> positioning:</strong> "You Hire. We Find." — Success-based recruitment & placement service.<br>
+  <strong>⚠ Note:</strong> This flow describes recruitment/placement (client hires directly). Not manpower outsourcing/staffing. For Saudi Arabia operations, confirm licensed activity & contract structure with the appropriate authority before launch.
+</div>
 
 </body>
 </html>
